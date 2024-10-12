@@ -1,0 +1,530 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Dekstop mode  */
+
+/* Logo Dan Navbar */
+#logo {
+  z-index: 1;
+}
+#logo a {
+  text-decoration: none;
+  color: rgb(30, 159, 171);
+}
+
+#logo h2 {
+  color: rgb(30, 159, 171);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(245, 245, 245);
+  height: 50px;
+  align-items: center;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: rgb(68, 68, 68);
+  font-weight: 500;
+}
+
+nav ul a:hover {
+  color: rgb(30, 159, 171);
+}
+
+/* End Logo dan NavBar */
+
+/* Hamburger Menu */
+.toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  opacity: 0;
+  left: -5px;
+  top: -3px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: black;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* End Hamburger Menu */
+
+/* Animasi Hamburger Menu  */
+
+.toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+  background-color: rgb(30, 159, 171);
+}
+
+.toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+  background-color: rgb(30, 159, 171);
+}
+
+/* End Animasi Hamburger Menu */
+
+/* Main Section */
+
+#container {
+  width: 100%;
+}
+
+/* End Main Section */
+
+/* Section Home dan About */
+
+section#home-about {
+  margin-top: 50px;
+  padding: 0 100px;
+  display: flex;
+  height: 80vh;
+}
+
+section#home-about img {
+  width: 120%;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transform: scale(120%);
+  animation: float 3s ease-in-out infinite;
+}
+
+section#home-about div {
+  margin: 30px;
+}
+
+section#home-about h2 {
+  margin: 20px;
+  font-size: 3em;
+  padding: 10px;
+}
+
+section#home-about span {
+  color: rgb(30, 159, 171);
+}
+
+section#home-about p {
+  text-align: center;
+  margin: 20px;
+  word-spacing: 2px;
+  letter-spacing: 2px;
+  font-size: 1.1em;
+}
+
+/* End Section Home dan About */
+
+/* Section Skill */
+
+#skill {
+  background-image: url(asset/ban.jpg);
+  background-size: cover;
+  padding: 20px 0;
+}
+
+.skill-container {
+  max-width: 50%;
+  margin: auto;
+}
+
+#skill h3 {
+  font-size: 1.5em;
+  color: rgb(30, 159, 171);
+  margin: 20px 0;
+}
+
+.skill span {
+  display: block;
+  font-weight: bold;
+  color: white;
+}
+
+.skill-bar {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.skill-fill {
+  height: 10px;
+  border-radius: 5px;
+}
+
+.fill-98 {
+  width: 98%;
+  background-color: #4caf50;
+}
+
+div.skill {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* End Section Skill */
+
+/* Section Project */
+
+section#project {
+  padding: 20px 0;
+}
+
+#project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+section#project h2 {
+  text-align: center;
+  font-size: 2em;
+  color: rgb(30, 159, 171);
+}
+
+section#project img {
+  max-width: 100%;
+  width: 400px;
+  height: auto;
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+}
+
+section#project img:hover {
+  transform: scale(1.1);
+}
+
+/* End Section Project */
+
+/* Section Experience */
+
+section#experience {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(160, 160, 160);
+  padding: 20px;
+}
+
+.timeline {
+  width: 60%;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 50px;
+  height: 100%;
+  width: 2px;
+  background-color: #fbbd08;
+}
+
+.timeline-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fbbd08;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.timeline-content {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.timeline-content h3 {
+  color: #fbbd08;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.timeline-content strong {
+  font-size: 1.2em;
+  color: #222;
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+/* End Section Experience */
+
+/* Section Contact */
+
+#contact {
+  display: flex;
+  justify-content: space-around;
+}
+
+#contact-container {
+  margin: 20px 0;
+  padding: 20px;
+  width: 56%;
+  border: 2px solid rgb(30, 159, 171);
+  border-radius: 10px;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 1.2em;
+}
+
+#contact form label {
+  margin: 5px 0;
+}
+
+#contact h1 {
+  margin: 10px 0;
+  color: rgb(15, 82, 88);
+}
+
+#contact button {
+  font-size: 1em;
+  background-color: rgb(30, 159, 171);
+  cursor: pointer;
+}
+
+#contact button:hover {
+  background-color: cyan;
+}
+
+/* End Section Contact */
+
+/* Footer */
+footer div {
+  background-color: rgb(107, 107, 107);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 90px;
+  color: white;
+  font-size: 0.8em;
+}
+
+footer p {
+  margin: 0 10px;
+}
+
+/* End Footer */
+
+/* End Desktop mode  */
+
+/* Mobile Mode */
+
+@media screen and (max-width: 576px) {
+  .toggle {
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    background-color: rgb(34, 34, 34);
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    z-index: -1000;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  .active {
+    opacity: 100;
+    display: flex;
+  }
+
+  nav ul a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    font-weight: 500;
+  }
+
+  nav ul a:hover {
+    color: rgb(30, 159, 171);
+    font-size: 1.5em;
+  }
+
+  section#satu {
+    z-index: -1;
+  }
+
+  /* Section Home dan About */
+
+  section#home-about {
+    margin-top: 0;
+    display: block;
+    padding: 0 0;
+    height: auto;
+  }
+
+  section#home-about div {
+    margin: 0;
+  }
+
+  section#home-about img {
+    max-width: 100%;
+    height: auto;
+    clip-path: none;
+    transform: scale(100%);
+  }
+
+  /* End Section Home dan About */
+
+  /* Section Skill */
+
+  #skill {
+    background-size: initial;
+  }
+
+  .skill-container {
+    max-width: 75%;
+    margin: auto;
+  }
+
+  /* End Section Skill */
+
+  /* Section Project */
+  section#project h2 {
+    margin-left: 0;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  /* End Section Project */
+
+  /* Section Experience */
+  section#experience {
+    display: flex;
+  }
+
+  .timeline {
+    width: 95%;
+  }
+
+  .timeline p {
+    text-align: left;
+    word-spacing: 5px;
+  }
+
+  /* End Section Experience */
+
+  /* Section Contact  */
+
+  #contact {
+    width: 100%;
+  }
+
+  #contact-container {
+    width: 80%;
+  }
+
+  /* End Section Contact  */
+
+  /* Footer */
+  footer div {
+    background-color: rgb(107, 107, 107);
+    display: flex;
+    padding: 10px 10px;
+    color: white;
+    font-size: 0.8em;
+  }
+
+  /* End Footer */
+}
+
+/* End Mobile Mode */
